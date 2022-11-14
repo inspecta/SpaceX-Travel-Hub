@@ -9,9 +9,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Rockets />} />
+          {/* <Route path="/" element={<Rockets />} />
           <Route path="/missions" element={<Missions />} />
-          <Route path="/my-profile" element={<Profile />} />
+          <Route path="/my-profile" element={<Profile />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
