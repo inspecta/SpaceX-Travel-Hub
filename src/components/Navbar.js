@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     < header className="navbar" >
       <img src={logo} className="logo" alt="logo" />
-      <h1 className="store-title"> Space Travelers' Hub </h1>
+      <h1 className="logo-title"> Space Travelers' Hub </h1>
       <nav>
         <ul className="NavLinks">
           <li>
