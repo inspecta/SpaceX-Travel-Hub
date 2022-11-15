@@ -5,7 +5,7 @@ const FETCH_MISSIONS = 'redux/missions/FETCH_MISSIONS';
 const url = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
-  missions: {},
+  missions: [],
   isLoading: true,
 }
 
@@ -31,13 +31,8 @@ const MissionsSlice = createSlice({
     },
     [FetchMissions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      action.payload.map((mission) => {
-        return state.missions = {
-          id: mission.mission_id,
-          mission_name: mission.mission_name,
-          description: mission.description,
-        }
-      })
+      state.missions = action.payload;
+
     },
     [FetchMissions.rejected]: (state) => {
       state.isLoading = false;
