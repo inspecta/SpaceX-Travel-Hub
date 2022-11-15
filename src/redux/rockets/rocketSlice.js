@@ -1,5 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
+const apiURL = 'https://api.spacexdata.com/v3/rockets';
+const FETCH_ROCKETS = 'FETCH_ROCKETS';
 // Slice
 
 const slice = createSlice({
@@ -15,21 +18,10 @@ const slice = createSlice({
     },
 });
 
-// Actions
-
-const apiURL = 'https://api.spacexdata.com/v3/rockets';
-
-const { rocketsSuccess } = slice.actions
-
-export const fetchrockets = () => async dispatch => {
-    try {
-        await apiURL.get('/rockets')
-            .then((response) => dispatch(rocketsSuccess(response.data)))
-    }
-    catch (e) {
-        return console.error(e.message);
-    }
-}
+export const fetchRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
+    const { data } = await axios.get(apiURL);
+    return { rockets: Object.entries(data) };
+  });
 
 export default slice.reducer
 
