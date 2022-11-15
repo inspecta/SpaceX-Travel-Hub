@@ -1,5 +1,4 @@
-import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import rocketReducer from './rockets/rocketSlice';
 import missionsReducer from './missions/missionSlice';
 
@@ -8,6 +7,6 @@ const store = configureStore({
     rockets: rocketReducer,
     missions: missionsReducer,
   },
-}, applyMiddleware(thunk));
+});
 
 export default store;

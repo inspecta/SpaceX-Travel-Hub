@@ -1,27 +1,50 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const apiURL = 'https://api.spacexdata.com/v3/rockets';
-const FETCH_ROCKETS = 'FETCH_ROCKETS';
+const apiURL = "https://api.spacexdata.com/v3/rockets";
+const FETCH_ROCKETS = "FETCH_ROCKETS";
+
+const initialState = {
+  rockets: [],
+  isLoading: true,
+};
+
+export const fetchRockets = createAsyncThunk(
+  FETCH_ROCKETS,
+  async (thunkAPI) => {
+    try {
+      const rockets = await axios.get(apiURL);
+      return rockets.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
 // Slice
 
 const slice = createSlice({
-    name: 'rockets',
-    initialState: {
-        rockets: [],
+  name: "rockets",
+  initialState,
+  reducers: {
+    [fetchRockets.pending]: (state) => {
+      state.isLoading = true;
     },
-    reducers: {
-        rocketsSuccess: (state, action) => {
-            state.rockets = action.payload;
-            state.isLoading = false;
-        },
+    [fetchRockets.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      action.payload.map((rocket) => {
+        return (state.rockets = {
+          id: rocket.id,
+          rocket_name: rocket.rocket_name,
+          description: rocket.description,
+          images: rocket.flickr_images,
+        });
+      });
     },
+    [fetchRockets.rejected]: (state) => {
+      state.isLoading = false;
+    },
+  },
 });
 
-export const fetchRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
-    const { data } = await axios.get(apiURL);
-    return { rockets: Object.entries(data) };
-  });
-
-export default slice.reducer
-
+export default slice.reducer;
