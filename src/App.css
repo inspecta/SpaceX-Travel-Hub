@@ -29,3 +29,33 @@
   gap: 10%;
 }
 
+.missions {
+  margin: 50px;
+  text-align: left;
+}
+
+.missions-table {
+  border: 1px solid;
+}
+
+tr {
+  width: 100%;
+}
+
+td {
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table th {
+  padding: 15px;
+}
