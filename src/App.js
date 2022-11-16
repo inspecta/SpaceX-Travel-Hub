@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Missions from './components/missions/Missions';
+import Rockets from './components/rockets/Rockets';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path="/" element={<Rockets />} /> */}
+          <Route path="/" element={<Rockets />} /> 
           <Route path="/missions" element={<Missions />} />
           {/* <Route path="/my-profile" element={<Profile />} /> */}
         </Routes>
