@@ -29,3 +29,27 @@
   gap: 10%;
 }
 
+.rocketList {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 44px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.rocketCard {
+  display: flex;
+  justify-content: flex-start;
+  gap: 22px;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+}
+
+.status {
+  background-color: blue;
+}
