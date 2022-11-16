@@ -2,10 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const FETCH_MISSIONS = 'redux/missions/FETCH_MISSIONS';
+
 const url = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
-  missions: {},
+  missions: [],
   isLoading: true,
 }
 
@@ -31,13 +32,16 @@ const MissionsSlice = createSlice({
     },
     [FetchMissions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      action.payload.map((mission) => {
-        return state.missions = {
-          id: mission.mission_id,
-          mission_name: mission.mission_name,
-          description: mission.description,
-        }
-      })
+
+      const arr = [];
+      action.payload.map((mission) => arr.push({
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+        reversed: false,
+      }));
+
+      state.missions = arr;
     },
     [FetchMissions.rejected]: (state) => {
       state.isLoading = false;
