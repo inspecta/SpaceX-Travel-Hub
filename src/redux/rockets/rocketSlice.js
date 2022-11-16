@@ -6,7 +6,7 @@ const FETCH_ROCKETS = "FETCH_ROCKETS";
 
 const initialState = {
   rockets: [],
-  isLoading: true,
+  status: null,
 };
 
 export const fetchRockets = createAsyncThunk(
@@ -37,17 +37,8 @@ const slice = createSlice({
         const IsSucessful = state;
         IsSucessful.status = 'success';
         IsSucessful.rockets = action.payload;
+       })
 
-        const rocketData = [];
-        action.payload.map((rocket) => rocketData.push({
-          id: rocket.id,
-          rocketName: rocket.rocket_name,
-          rocketDesc: rocket.description,
-          rocketImages: rocket.flickr_images,
-          reserved: false,
-        }));
-        IsSucessful.rockets = rocketData;
-      })
       .addCase(fetchRockets.rejected, (state) => {
         const IsRejected = state;
         IsRejected.status = 'rejected';
