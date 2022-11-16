@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const FETCH_MISSIONS = 'redux/missions/FETCH_MISSIONS';
+
 const url = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
@@ -31,8 +32,16 @@ const MissionsSlice = createSlice({
     },
     [FetchMissions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.missions = action.payload;
 
+      const arr = [];
+      action.payload.map((mission) => arr.push({
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+        reversed: false,
+      }));
+
+      state.missions = arr;
     },
     [FetchMissions.rejected]: (state) => {
       state.isLoading = false;
