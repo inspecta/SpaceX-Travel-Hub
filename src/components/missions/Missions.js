@@ -36,12 +36,8 @@ const Missions = () => {
                     {mission.reserved ? 'Active member' : 'NOT A MEMBER'}
                   </p>
                 </td>
-                <td className='mission-status'>
-                  <button type='submit'
-                    className={mission.reserved ? 'join-mission' : 'leave-mission'}
-                    onClick={() => MissionHandler(mission.id)}>
-                    {mission.reserved ? 'Join Mission' : 'Leave Mission'}
-                  </button></td>
+                {mission.reserved && <td><button type='submit' className='leave-mission' onClick={() => MissionHandler(mission.id)}>Leave Mission</button></td>}
+                {!mission.reserved && <td><button type='submit' className='join-mission' onClick={() => MissionHandler(mission.id)}>Join Mission</button></td>}
               </tr>
             );
           })};
