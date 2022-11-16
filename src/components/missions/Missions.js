@@ -5,12 +5,12 @@ import { FetchMissions } from '../../redux/missions/missionSlice';
 const Missions = () => {
   const dispatch = useDispatch();
 
+  const fetchedMissions = useSelector((state) => state.missions);
   useEffect(() => {
     dispatch(FetchMissions());
-  }, [dispatch]);
+  }, []);
 
-  const fetchedMissions = useSelector((state) => state.missions);
-
+  console.log(fetchedMissions.missions);
   return (
     <div className='missions'>
       <table className='missions-table'>
