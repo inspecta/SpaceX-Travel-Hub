@@ -25,7 +25,20 @@ export const FetchMissions = createAsyncThunk(
 const MissionsSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+  reducers: {
+    HandleMissions: (state, action) => ({
+      ...state,
+      missions: state.missions.map((mission) => {
+        if (mission.id === action.payload) {
+          return {
+            ...mission,
+            reserved: !mission.reserved,
+          };
+        }
+        return { ...mission };
+      }),
+    }),
+  },
   extraReducers: {
     [FetchMissions.pending]: (state) => {
       state.isLoading = true;
@@ -38,7 +51,7 @@ const MissionsSlice = createSlice({
         id: mission.mission_id,
         name: mission.mission_name,
         description: mission.description,
-        reversed: false,
+        reserved: false,
       }));
 
       state.missions = arr;
@@ -49,4 +62,5 @@ const MissionsSlice = createSlice({
   }
 })
 
+export const { HandleMissions } = MissionsSlice.actions;
 export default MissionsSlice.reducer;

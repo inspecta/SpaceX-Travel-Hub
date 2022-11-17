@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FetchMissions } from '../../redux/missions/missionSlice';
+import { FetchMissions, HandleMissions } from '../../redux/missions/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,10 @@ const Missions = () => {
     dispatch(FetchMissions());
   }, []);
 
-  console.log(fetchedMissions.missions);
+  const MissionHandler = (id) => {
+    dispatch(HandleMissions(id));
+  }
+
   return (
     <div className='missions'>
       <table className='missions-table'>
@@ -26,10 +29,15 @@ const Missions = () => {
           {fetchedMissions.missions.map((mission, index) => {
             return (
               <tr key={index} className='mission-details'>
-                <th>{mission.mission_name}</th>
-                <td>{mission.description}</td>
-                <td><button type='button' className='member_status'>NOT A MEMBER</button></td>
-                <td><button type='submit' className='mission_status'>Join Mission</button></td>
+                <td>{mission.name}</td>
+                <td className='description'>{mission.description}</td>
+                <td className='status'>
+                  <p className={mission.reserved ? 'member' : 'notMember'}>
+                    {mission.reserved ? 'Active member' : 'NOT A MEMBER'}
+                  </p>
+                </td>
+                {mission.reserved && <td><button type='submit' className='leave-mission' onClick={() => MissionHandler(mission.id)}>Leave Mission</button></td>}
+                {!mission.reserved && <td><button type='submit' className='join-mission' onClick={() => MissionHandler(mission.id)}>Join Mission</button></td>}
               </tr>
             );
           })};
