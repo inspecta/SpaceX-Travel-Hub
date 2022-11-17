@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchRockets } from "../../redux/rockets/rocketSlice";
+import { fetchRockets, bookRockets } from "../../redux/rockets/rocketSlice";
 
 const Rockets = () => {
   const { rockets, status } = useSelector((state) => state.rockets);
@@ -11,6 +11,10 @@ const Rockets = () => {
       dispatch(fetchRockets());
     }
   }, [status, dispatch]);
+
+  const BookingHandler = (id) => {
+    dispatch(bookRockets(id));
+  }
   
   let content;
   if (status === 'pending') {
@@ -23,7 +27,7 @@ const Rockets = () => {
 
   return (
     <div>
-      {content}
+      { content }
       <div className="rocketList">
         {rockets.map((rocket) => (
           <div key={rocket.id} className="rocketCard">
@@ -32,11 +36,12 @@ const Rockets = () => {
               <h3 className="rocketName">{rocket.rocket_name}</h3>
               <div className="rocketDesc">
                 <p>
-                  <span className="status">status</span>
-                  <span>{rocket.description}</span>
+                  {rocket.active && <span className="status">Reserved</span>}
+                  {rocket.description}
                 </p>
               </div>
-              <button type="submit">Reserve Rocket</button>
+              <button id={rocket.id} type="submit" onClick={() => BookingHandler(rocket.id)}>
+                {rocket.active ? 'Cancel Reservations' : 'Reserve Rockets'}</button>
             </div>
           </div>
         ))}
