@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
-
+  const { rockets } = useSelector((state) => state.rockets);
+  const reservedRockets = rockets.filter((rocks) => rocks.active);
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((i) => i.reserved);
 
@@ -21,7 +23,24 @@ const Profile = () => {
         </div>
       </div>
       <div className='rockets'>
-        <h2>My Rockets</h2>
+        <h3>My Rockets</h3>
+        {reservedRockets.length === 0 ? (
+          <div className="noReservations">
+            <p>No Reservations Made</p>
+            <Link className="reserveRocketsLink" to="/">Make Reservations</Link>
+          </div>
+        ) : (
+        <div className='activeRockets'>
+          <ul>
+            {reservedRockets.map((rocket) => (
+              <li key={rocket.id}>{rocket.rocket_name}</li>
+            ))}
+          </ul>
+          </div>
+        )} 
+      
+
+
       </div>
     </div>
   )
