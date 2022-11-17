@@ -6,9 +6,12 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   const fetchedMissions = useSelector((state) => state.missions);
+
   useEffect(() => {
-    dispatch(FetchMissions());
-  }, []);
+    if (!fetchedMissions.missions.length) {
+      dispatch(FetchMissions());
+    }
+  }, [dispatch]);
 
   const MissionHandler = (id) => {
     dispatch(HandleMissions(id));

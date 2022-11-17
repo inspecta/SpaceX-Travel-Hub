@@ -153,3 +153,39 @@ table th {
   padding: 10px;
   font-size: 15px;
 }
+
+/*My Profile*/
+.profile {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  gap: 2em;
+}
+
+.missions {
+  flex: 1;
+}
+
+.activeMissions {
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+}
+
+.activeMissions > ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.activeMissions > ul > li {
+  list-style: none;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  padding: 10px 0 15px 10px;
+}
+
+.activeMissions > ul > li:last-child {
+  border-bottom: none;
+}
+
+.rockets {
+  flex: 1;
+}
