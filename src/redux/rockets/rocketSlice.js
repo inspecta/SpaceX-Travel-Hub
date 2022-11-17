@@ -26,7 +26,21 @@ export const fetchRockets = createAsyncThunk(
 const slice = createSlice({
   name: "rockets",
   initialState,
-  reducer: {},
+  reducers: {
+    bookRockets: (state, action) => ({
+      ...state,
+      rockets: state.rockets.map((rocket) => {
+        if (rocket.id === action.payload) {
+        return { 
+          ...rocket,
+           active: !rocket.active, 
+          };
+      };
+      return { ...rocket };
+      }),
+    }),
+  },
+
   extraReducers(builder) {
     builder
       .addCase(fetchRockets.pending, (state) => {
@@ -37,7 +51,19 @@ const slice = createSlice({
         const IsSucessful = state;
         IsSucessful.status = 'success';
         IsSucessful.rockets = action.payload;
-       })
+
+      //  const rocketsArr = [];
+      //   action.payload.map((rocket) => rocketsArr.push({
+      //     id: rocket.id,
+      //     rocketName: rocket.rocket_name,
+      //     rocketDesc: rocket.description,
+      //     rocketImages: rocket.flickr_images,
+      //     reserved: false,
+      //   }));
+      //   IsSucessful.rockets = rocketsArr;
+
+    
+      })
 
       .addCase(fetchRockets.rejected, (state) => {
         const IsRejected = state;
@@ -46,5 +72,5 @@ const slice = createSlice({
   },
 });
 
-
+export const { bookRockets } = slice.actions;
 export default slice.reducer;
