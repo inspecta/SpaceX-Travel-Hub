@@ -51,16 +51,6 @@ const slice = createSlice({
         const IsSucessful = state;
         IsSucessful.status = 'success';
         IsSucessful.rockets = action.payload;
-
-        //  const rocketsArr = [];
-        //   action.payload.map((rocket) => rocketsArr.push({
-        //     id: rocket.id,
-        //     rocketName: rocket.rocket_name,
-        //     rocketDesc: rocket.description,
-        //     rocketImages: rocket.flickr_images,
-        //     reserved: false,
-        //   }));
-        //   IsSucessful.rockets = rocketsArr;
       })
 
       .addCase(fetchRockets.rejected, (state) => {
