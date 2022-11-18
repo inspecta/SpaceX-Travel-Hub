@@ -8,7 +8,7 @@ const url = 'https://api.spacexdata.com/v3/missions';
 const initialState = {
   missions: [],
   isLoading: true,
-}
+};
 
 export const FetchMissions = createAsyncThunk(
   FETCH_MISSIONS,
@@ -19,7 +19,7 @@ export const FetchMissions = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
     }
-  }
+  },
 );
 
 const MissionsSlice = createSlice({
@@ -58,9 +58,9 @@ const MissionsSlice = createSlice({
     },
     [FetchMissions.rejected]: (state) => {
       state.isLoading = false;
-    }
-  }
-})
+    },
+  },
+});
 
 export const { HandleMissions } = MissionsSlice.actions;
 export default MissionsSlice.reducer;
