@@ -1,16 +1,19 @@
 import React from 'react';
-import logo from '../images/planet.png';
 import { NavLink } from 'react-router-dom';
+import logo from '../images/planet.png';
 
 const Navbar = () => {
   const activePage = ({ isActive }) => ({
     textDecoration: isActive ? 'underline' : 'none',
+    color: isActive ? '#000' : '#595959',
   });
 
   return (
-    < header className="navbar" >
-      <img src={logo} className="logo" alt="logo" />
-      <h1 className="logo-title"> Space Travelers' Hub </h1>
+    <header className="navbar">
+      <div className="logo-head">
+        <img src={logo} className="logo" alt="logo" />
+        <h1 className="logo-title">Space Travelers&apos; Hub</h1>
+      </div>
       <nav>
         <ul className="NavLinks">
           <li>
@@ -30,8 +33,8 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </header >
-  )
+    </header>
+  );
 };
 
 export default Navbar;
