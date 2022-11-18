@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`check missions component check if main missions component renders 1`] = `
+<div
+  class="missions"
+>
+  <table
+    class="missions-table"
+  >
+    <thead
+      class="mission-tbl-head"
+    >
+      <tr>
+        <th>
+          Missions
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Join
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`check missions component missions snapshot 1`] = `
+<div
+  class="missions"
+>
+  <table
+    class="missions-table"
+  >
+    <thead
+      class="mission-tbl-head"
+    >
+      <tr>
+        <th>
+          Missions
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Join
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`check missions component should render missions 1`] = `"<div><div class=\\"missions\\"><table class=\\"missions-table\\"><thead class=\\"mission-tbl-head\\"><tr><th>Missions</th><th>Description</th><th>Status</th><th>Join</th></tr></thead><tbody></tbody></table></div></div>"`;
