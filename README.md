@@ -22,7 +22,7 @@
 
 ## Live Demo
 
-[Link](http://www.spacex-travellers-hub.netlify.app)
+[Link](https://spacex-travellers-hub.netlify.app/)
 
 ## Getting Started
 
