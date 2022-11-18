@@ -40,7 +40,7 @@ const Rockets = () => {
                   {rocket.description}
                 </p>
               </div>
-              <button id={rocket.id} type="submit" onClick={() => BookingHandler(rocket.id)}>
+              <button className={rocket.active ? 'cancel' : 'reserve'} id={rocket.id} type="submit" onClick={() => BookingHandler(rocket.id)}>
                 {rocket.active ? 'Cancel Reservations' : 'Reserve Rockets'}</button>
             </div>
           </div>

@@ -34,9 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: 44px;
-  margin-top: 44px;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 5%;
 }
 
 .rocketCard {
@@ -49,10 +47,45 @@ img {
   width: 30%;
   height: auto;
   object-fit: contain;
+  border-radius: 8px;
+}
+
+.rocketContent {
+  padding-top: 0;
 }
 
 .status {
-  background-color: blue;
+  background-color: rgb(72, 179, 221);
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.rocketName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rocketDesc {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.reserve,
+.cancel {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.reserve {
+background-color: rgb(25, 54, 218);
+color: #fff;
+border: none;
+}
+
+.cancel {
+border: solid 1px rgb(128, 128, 128);
 }
 
 .missions {
@@ -162,50 +195,41 @@ table th {
   gap: 2em;
 }
 
-.missions {
-  flex: 1;
-}
-
-.activeMissions {
-  border: 1px solid rgb(197, 197, 197);
-  border-radius: 5px;
-}
-
-.activeMissions > ul {
-  padding-left: 0;
-  margin: 0;
-}
-
-.activeMissions > ul > li {
-  list-style: none;
-  border-bottom: 1px solid rgb(197, 197, 197);
-  padding: 10px 0 15px 10px;
-}
-
-.activeMissions > ul > li:last-child {
-  border-bottom: none;
-}
-
+.missions,
 .rockets {
   flex: 1;
 }
 
+.activeMissions,
 .activeRockets {
   border: 1px solid rgb(197, 197, 197);
   border-radius: 5px;
 }
 
+.activeMissions > ul,
 .activeRockets > ul {
-  padding-right: 0;
+  padding-left: 0;
   margin: 0;
 }
 
+.activeMissions > ul > li,
 .activeRockets > ul > li {
   list-style: none;
   border-bottom: 1px solid rgb(197, 197, 197);
   padding: 10px 0 15px 10px;
 }
 
+.activeMissions > ul > li:last-child,
 .activeRockets > ul > li:last-child {
   border-bottom: none;
 }
+
+.noReservations {
+  font-size: 15px;
+}
+
+.reserveRocketsLink {
+  color: rgb(15, 43, 204);
+  font-size: 15px;
+}
+
