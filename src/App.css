@@ -57,7 +57,12 @@
 .rocketCard {
   display: flex;
   justify-content: flex-start;
+  width: 95%;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 8px;
   gap: 22px;
+  box-shadow: 0 0 0 1px rgba(232, 232, 232, 0.5);
 }
 
 img {
@@ -65,10 +70,11 @@ img {
   height: auto;
   object-fit: contain;
   border-radius: 8px;
+  padding: 3%;
 }
 
 .rocketContent {
-  padding-top: 0;
+  padding: 3%;
 }
 
 .mission-status {
@@ -104,8 +110,26 @@ img {
   border: none;
 }
 
+.reserve:hover {
+  background-color: #fff;
+  color: rgb(25, 54, 218);
+  border: 1px solid grey;
+}
+
 .cancel {
   border: solid 1px rgb(128, 128, 128);
+}
+
+.cancel:hover {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .rocketCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .missions {
