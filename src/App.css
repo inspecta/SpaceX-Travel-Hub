@@ -80,6 +80,7 @@ img {
 .mission-status {
   border-radius: 3px;
   padding: 2px;
+  text-align: center;
 }
 
 .mission-status > p {
@@ -199,10 +200,6 @@ table th {
   background-color: rgb(66, 66, 66, 0.7);
   font-size: 14px;
   padding: 5px;
-}
-
-.mission-status {
-  text-align: center;
 }
 
 /* m */
