@@ -1,8 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const apiURL = "https://api.spacexdata.com/v3/rockets";
-const FETCH_ROCKETS = "FETCH_ROCKETS";
+const apiURL = 'https://api.spacexdata.com/v3/rockets';
+const FETCH_ROCKETS = 'FETCH_ROCKETS';
 
 const initialState = {
   rockets: [],
@@ -18,25 +18,25 @@ export const fetchRockets = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
     }
-  }
+  },
 );
 
 // Slice
 
 const slice = createSlice({
-  name: "rockets",
+  name: 'rockets',
   initialState,
   reducers: {
     bookRockets: (state, action) => ({
       ...state,
       rockets: state.rockets.map((rocket) => {
         if (rocket.id === action.payload) {
-        return { 
-          ...rocket,
-           active: !rocket.active, 
+          return {
+            ...rocket,
+            active: !rocket.active,
           };
-      };
-      return { ...rocket };
+        }
+        return { ...rocket };
       }),
     }),
   },
@@ -52,17 +52,15 @@ const slice = createSlice({
         IsSucessful.status = 'success';
         IsSucessful.rockets = action.payload;
 
-      //  const rocketsArr = [];
-      //   action.payload.map((rocket) => rocketsArr.push({
-      //     id: rocket.id,
-      //     rocketName: rocket.rocket_name,
-      //     rocketDesc: rocket.description,
-      //     rocketImages: rocket.flickr_images,
-      //     reserved: false,
-      //   }));
-      //   IsSucessful.rockets = rocketsArr;
-
-    
+        //  const rocketsArr = [];
+        //   action.payload.map((rocket) => rocketsArr.push({
+        //     id: rocket.id,
+        //     rocketName: rocket.rocket_name,
+        //     rocketDesc: rocket.description,
+        //     rocketImages: rocket.flickr_images,
+        //     reserved: false,
+        //   }));
+        //   IsSucessful.rockets = rocketsArr;
       })
 
       .addCase(fetchRockets.rejected, (state) => {

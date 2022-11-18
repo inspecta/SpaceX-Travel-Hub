@@ -83,13 +83,13 @@ img {
 }
 
 .reserve {
-background-color: rgb(25, 54, 218);
-color: #fff;
-border: none;
+  background-color: rgb(25, 54, 218);
+  color: #fff;
+  border: none;
 }
 
 .cancel {
-border: solid 1px rgb(128, 128, 128);
+  border: solid 1px rgb(128, 128, 128);
 }
 
 .missions {
@@ -197,7 +197,7 @@ table th {
   gap: 2em;
 }
 
-.missions-profile {
+.missions-profile,
 .rockets {
   flex: 1;
 }
@@ -234,4 +234,3 @@ table th {
   color: rgb(15, 43, 204);
   font-size: 15px;
 }
-

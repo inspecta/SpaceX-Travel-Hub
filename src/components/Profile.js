@@ -20,7 +20,7 @@ const Profile = () => {
           </ul>
         </div>
       </div>
-      <div className='rockets'>
+      <div className="rockets">
         <h3>My Rockets</h3>
         {reservedRockets.length === 0 ? (
           <div className="noReservations">
@@ -28,14 +28,14 @@ const Profile = () => {
             <Link className="reserveRocketsLink" to="/">Make Reservations</Link>
           </div>
         ) : (
-        <div className='activeRockets'>
-          <ul>
-            {reservedRockets.map((rocket) => (
-              <li key={rocket.id}>{rocket.rocket_name}</li>
-            ))}
-          </ul>
+          <div className="activeRockets">
+            <ul>
+              {reservedRockets.map((rocket) => (
+                <li key={rocket.id}>{rocket.rocket_name}</li>
+              ))}
+            </ul>
           </div>
-        )} 
+        )}
       </div>
     </div>
   );
