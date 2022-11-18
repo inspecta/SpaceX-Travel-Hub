@@ -15,10 +15,10 @@ const Rockets = () => {
   const BookingHandler = (id) => {
     dispatch(bookRockets(id));
   }
-  
+
   let content;
   if (status === 'pending') {
-    content = <p>Loading...</p>;
+    content = <p className="loading">Loading...</p>;
   } else if (status === 'rejected') {
     content = <p>An error occured</p>;
   } else if (status === 'success') {
@@ -27,7 +27,7 @@ const Rockets = () => {
 
   return (
     <div>
-      { content }
+      {content}
       <div className="rocketList">
         {rockets.map((rocket) => (
           <div key={rocket.id} className="rocketCard">
