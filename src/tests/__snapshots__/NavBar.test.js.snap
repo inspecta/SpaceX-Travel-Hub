@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the navbar component 1`] = `
+<DocumentFragment>
+  <header
+    class="navbar"
+  >
+    <div
+      class="logo-head"
+    >
+      <img
+        alt="logo"
+        class="logo"
+        src="planet.png"
+      />
+      <h1
+        class="logo-title"
+      >
+        Space Travelers' Hub
+      </h1>
+    </div>
+    <nav>
+      <ul
+        class="NavLinks"
+      >
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+            style="text-decoration: underline; color: rgb(0, 0, 0);"
+          >
+            Rockets
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/missions/"
+            style="text-decoration: none; color: rgb(89, 89, 89);"
+          >
+            Missions
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/my-profile/"
+            style="text-decoration: none; color: rgb(89, 89, 89);"
+          >
+            My Profile
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</DocumentFragment>
+`;
