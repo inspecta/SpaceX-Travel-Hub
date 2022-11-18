@@ -8,16 +8,14 @@ import Profile from './components/Profile';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Rockets />} />
-          <Route path="/missions" element={<Missions />} />
-          <Route path="/my-profile" element={<Profile />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/my-profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
