@@ -31,7 +31,7 @@ const Rockets = () => {
       <div className="rocketList">
         {rockets.map((rocket) => (
           <div key={rocket.id} className="rocketCard">
-            <img src={rocket.flickr_images[0]} alt="" />
+            <img src={rocket.flickr_images[0]} alt="rockes" />
             <div className="rocketContent">
               <h3 className="rocketName">{rocket.rocket_name}</h3>
               <div className="rocketDesc">
