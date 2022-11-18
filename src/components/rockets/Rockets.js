@@ -14,8 +14,7 @@ const Rockets = () => {
 
   const BookingHandler = (id) => {
     dispatch(bookRockets(id));
-  }
-};
+  };
 
   let content;
   if (status === 'pending') {
