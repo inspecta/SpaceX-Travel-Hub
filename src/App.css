@@ -1,0 +1,301 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  background-color: rgba(232, 232, 232, 0.5);
+  align-items: center;
+  border-bottom: solid 1px #e8e8e8;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.logo-head {
+  display: flex;
+  margin-left: 25px;
+}
+
+.logo {
+  width: 50px;
+  padding: 10px;
+}
+
+.logo-title {
+  color: #000;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.NavLinks {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.NavLinks > li > a {
+  text-decoration: none;
+  padding: 10px;
+  color: #525252;
+}
+
+.loading {
+  color: #fff;
+  background-color: rgb(12, 145, 0);
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  width: 20%;
+  border-radius: 5px;
+  font-weight: 900;
+}
+
+.rocketList {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  padding: 5%;
+}
+
+.rocketCard {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 8px;
+  gap: 22px;
+  box-shadow: 0 0 0 1px rgba(232, 232, 232, 0.5);
+}
+
+img {
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 3%;
+}
+
+.rocketContent {
+  padding: 3%;
+}
+
+.mission-status {
+  border-radius: 3px;
+  padding: 2px;
+  text-align: center;
+}
+
+.mission-status > p {
+  border: 1px solid rgb(72, 179, 221);
+}
+
+.rocketName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rocketDesc {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.reserve,
+.cancel {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.reserve {
+  background-color: rgb(25, 54, 218);
+  color: #fff;
+  border: none;
+}
+
+.reserve:hover {
+  background-color: #fff;
+  color: rgb(25, 54, 218);
+  border: 1px solid grey;
+}
+
+.cancel {
+  border: solid 1px rgb(128, 128, 128);
+}
+
+.cancel:hover {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .rocketCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rocket-img {
+    width: 90%;
+    border-radius: 20px;
+  }
+}
+
+.missions {
+  width: 95%;
+  margin: auto;
+  text-align: left;
+  border: none;
+}
+
+.missions-table {
+  border: 1px solid rgb(180, 180, 180);
+}
+
+tr {
+  width: 100%;
+}
+
+.missions-table tr:nth-child(even) {
+  background-color: rgb(204, 204, 204);
+}
+
+.missions-table tr:nth-child(odd) {
+  background-color: rgb(24, 24, 24, 0.85);
+  color: #fff;
+}
+
+td {
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table th {
+  padding: 15px;
+}
+
+.member,
+.notMember,
+.join-mission,
+.leave-mission {
+  color: #fff;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.member {
+  background-color: rgb(1, 164, 214);
+  font-size: 15px;
+  padding: 2px;
+  font-weight: 500;
+}
+
+.notMember {
+  background-color: rgb(66, 66, 66, 0.7);
+  font-size: 14px;
+  padding: 5px;
+}
+
+/* m */
+
+.join-mission {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 15px 10px 15px;
+  font-size: 15px;
+  box-shadow: 0 0 0 1px rgb(177, 253, 177);
+  border: none;
+}
+
+.leave-mission {
+  color: red;
+  box-shadow: 0 0 0 1px red;
+  background-color: #fff;
+  padding: 10px 10px 10px 10px;
+  font-size: 15px;
+  border: none;
+}
+
+.status {
+  background-color: rgb(72, 179, 221);
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.description {
+  text-align: justify;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/* My Profile */
+.profile {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  gap: 2em;
+}
+
+.missions-profile,
+.rockets {
+  flex: 1;
+}
+
+.activeMissions,
+.activeRockets {
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+}
+
+.activeMissions > ul,
+.activeRockets > ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.activeMissions > ul > li,
+.activeRockets > ul > li {
+  list-style: none;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  padding: 10px 0 15px 10px;
+}
+
+.activeMissions > ul > li:last-child,
+.activeRockets > ul > li:last-child {
+  border-bottom: none;
+}
+
+.noReservations {
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+  padding: 5px 0 30px 10px;
+}
+
+.reserveRocketsLink {
+  color: rgb(15, 43, 204);
+  font-size: 15px;
+}
+
+.no-missions {
+  padding: 10px;
+}
+
+.reserve-btn,
+.reserveRocketsLink {
+  background-color: rgb(66, 66, 66, 0.7);
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.reserve-btn:hover,
+.reserveRocketsLink:hover {
+  background-color: rgb(66, 66, 66, 1);
+}
