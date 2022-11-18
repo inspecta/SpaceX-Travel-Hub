@@ -19,28 +19,28 @@ const Rockets = () => {
   return (
     <div className="rocketList">
       {status === 'pending' ? (
-          <p>Loading...</p>
-        ) : (
-      <div>
-        {rockets.map((rocket) => (
-          <div key={rocket.id} className="rocketCard">
-            <img src={rocket.flickr_images[0]} className="rocket-img" alt="rockes" />
-            <div className="rocketContent">
-              <h3 className="rocketName">{rocket.rocket_name}</h3>
-              <div className="rocketDesc">
-                <p>
-                  {rocket.active && <span className="status">Reserved</span>}
-                  {rocket.description}
-                </p>
+        <p>Loading...</p>
+      ) : (
+        <div>
+          {rockets.map((rocket) => (
+            <div key={rocket.id} className="rocketCard">
+              <img src={rocket.flickr_images[0]} className="rocket-img" alt="rockes" />
+              <div className="rocketContent">
+                <h3 className="rocketName">{rocket.rocket_name}</h3>
+                <div className="rocketDesc">
+                  <p>
+                    {rocket.active && <span className="status">Reserved</span>}
+                    {rocket.description}
+                  </p>
+                </div>
+                <button className={rocket.active ? 'cancel' : 'reserve'} id={rocket.id} type="submit" onClick={() => BookingHandler(rocket.id)}>
+                  {rocket.active ? 'Cancel Reservations' : 'Reserve Rockets'}
+                </button>
               </div>
-              <button className={rocket.active ? 'cancel' : 'reserve'} id={rocket.id} type="submit" onClick={() => BookingHandler(rocket.id)}>
-                {rocket.active ? 'Cancel Reservations' : 'Reserve Rockets'}
-              </button>
             </div>
-          </div>
-        ))}
-      </div>
-        )}
+          ))}
+        </div>
+      )}
     </div>
   );
 };

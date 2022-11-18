@@ -7,9 +7,9 @@ import Rockets from '../components/rockets/Rockets';
 describe('Rocket page testing', () => {
   test('Does Rocket match the snapshot', () => {
     const rocket = render(
-    <Provider store={store}>
-      <Rockets />
-    </Provider>,
+      <Provider store={store}>
+        <Rockets />
+      </Provider>,
     );
     expect(rocket).toMatchSnapshot();
   });
