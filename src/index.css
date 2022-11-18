@@ -1,8 +1,18 @@
 @import url("https://fonts.cdnfonts.com/css/winston");
+
 body {
   margin: 0;
   display: flex;
   height: 100vh;
   width: 100%;
   font-family: "Winston", sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: auto;
+}
+
+.App {
+  /* background-color: rgba(59, 59, 59, 0.3); */
 }

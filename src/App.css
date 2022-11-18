@@ -1,33 +1,37 @@
 .navbar {
   display: flex;
-  height: 5.938rem;
   width: 100%;
-  background-color: #ffff;
+  background-color: rgba(232, 232, 232, 0.5);
   align-items: center;
   border-bottom: solid 1px #e8e8e8;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.logo-head {
+  display: flex;
 }
 
 .logo {
-  position: absolute;
-  height: 2rem;
-  width: 2rem;
-  left: 5%;
-  top: 6%;
+  width: 50px;
+  padding: 10px;
 }
 
 .logo-title {
   color: #000;
   font-size: 1.875rem;
   font-weight: bold;
-  margin: 0.375rem 40rem 0.125rem 7.25rem;
 }
 
 .NavLinks {
   display: flex;
   list-style-type: none;
-  margin-right: 5%;
-  gap: 10%;
+}
+
+.NavLinks > li > a {
+  text-decoration: none;
+  padding: 10px;
+  color: #525252;
 }
 
 .rocketList {
@@ -51,22 +55,19 @@ img {
   object-fit: contain;
 }
 
-.status {
-  background-color: blue;
-}
-
 .missions {
   width: 95%;
   margin: auto;
   text-align: left;
-}
-
-table {
   border: none;
 }
 
 .missions-table {
   border: 1px solid rgb(180, 180, 180);
+}
+
+tr {
+  width: 100%;
 }
 
 .missions-table tr:nth-child(even) {
@@ -76,9 +77,6 @@ table {
 .missions-table tr:nth-child(odd) {
   background-color: rgb(24, 24, 24, 0.85);
   color: #fff;
-}
-tr {
-  width: 100%;
 }
 
 td {
@@ -116,9 +114,9 @@ table th {
 }
 
 .notMember {
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(66, 66, 66, 0.7);
   font-size: 14px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .status,
@@ -131,7 +129,7 @@ table th {
 }
 
 .join-mission {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   color: #000;
   padding: 10px 15px 10px 15px;
   font-size: 15px;
@@ -154,7 +152,7 @@ table th {
   font-size: 15px;
 }
 
-/*My Profile*/
+/* My Profile */
 .profile {
   width: 90%;
   display: flex;
@@ -162,7 +160,7 @@ table th {
   gap: 2em;
 }
 
-.missions {
+.missions-profile {
   flex: 1;
 }
 
