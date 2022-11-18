@@ -22,7 +22,7 @@
 
 ## Live Demo
 
-[Link](https://inspecta.github.io/react-group-project-1/)
+[Link](http://www.spacex-travellers-hub.netlify.app)
 
 ## Getting Started
 

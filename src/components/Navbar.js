@@ -17,7 +17,7 @@ const Navbar = () => {
       <nav>
         <ul className="NavLinks">
           <li>
-            <NavLink to="/" end style={activePage}>
+            <NavLink to="/" style={activePage}>
               Rockets
             </NavLink>
           </li>
