@@ -10,6 +10,7 @@
 
 .logo-head {
   display: flex;
+  margin-left: 25px;
 }
 
 .logo {
@@ -26,12 +27,24 @@
 .NavLinks {
   display: flex;
   list-style-type: none;
+  margin-right: 30px;
 }
 
 .NavLinks > li > a {
   text-decoration: none;
   padding: 10px;
   color: #525252;
+}
+
+.loading {
+  color: #fff;
+  background-color: rgb(12, 145, 0);
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  width: 20%;
+  border-radius: 5px;
+  font-weight: 900;
 }
 
 .rocketList {
@@ -64,10 +77,13 @@ img {
   padding: 3%;
 }
 
-.status {
-  background-color: rgb(72, 179, 221);
+.mission-status {
   border-radius: 3px;
   padding: 2px;
+}
+
+.mission-status > p {
+  border: 1px solid rgb(72, 179, 221);
 }
 
 .rocketName {
@@ -251,10 +267,30 @@ table th {
 }
 
 .noReservations {
-  font-size: 15px;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+  padding: 5px 0 30px 10px;
 }
 
 .reserveRocketsLink {
   color: rgb(15, 43, 204);
   font-size: 15px;
+}
+
+.no-missions {
+  padding: 10px;
+}
+
+.reserve-btn,
+.reserveRocketsLink {
+  background-color: rgb(66, 66, 66, 0.7);
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.reserve-btn:hover,
+.reserveRocketsLink:hover {
+  background-color: rgb(66, 66, 66, 1);
 }

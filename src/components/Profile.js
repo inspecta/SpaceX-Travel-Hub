@@ -13,6 +13,17 @@ const Profile = () => {
       <div className="missions-profile">
         <h3>My Missions</h3>
         <div className="activeMissions">
+          {!joinedMissions.length
+            && (
+              <div className="no-missions">
+                <p>No active missions</p>
+                <p className="make-reseversations">
+                  <Link to="/missions" className="reserve-btn">
+                    Make Reservations
+                  </Link>
+                </p>
+              </div>
+            )}
           <ul>
             {joinedMissions.map((mission) => (
               <li key={mission.id}>{mission.name}</li>
