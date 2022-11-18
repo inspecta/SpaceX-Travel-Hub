@@ -11,7 +11,7 @@ const Missions = () => {
     if (!fetchedMissions.missions.length) {
       dispatch(FetchMissions());
     }
-  }, [dispatch]);
+  }, [fetchedMissions.missions.length, dispatch]);
 
   const MissionHandler = (id) => {
     dispatch(HandleMissions(id));

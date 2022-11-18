@@ -80,6 +80,7 @@ img {
 .mission-status {
   border-radius: 3px;
   padding: 2px;
+  text-align: center;
 }
 
 .mission-status > p {
@@ -129,6 +130,11 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .rocket-img {
+    width: 90%;
+    border-radius: 20px;
   }
 }
 
@@ -196,14 +202,7 @@ table th {
   padding: 5px;
 }
 
-.status,
-.mission-status {
-  text-align: center;
-}
-
-.status > p {
-  box-shadow: 0 0 0 1px #fff;
-}
+/* m */
 
 .join-mission {
   background-color: #fff;
@@ -221,6 +220,12 @@ table th {
   padding: 10px 10px 10px 10px;
   font-size: 15px;
   border: none;
+}
+
+.status {
+  background-color: rgb(72, 179, 221);
+  border-radius: 3px;
+  padding: 2px;
 }
 
 .description {
