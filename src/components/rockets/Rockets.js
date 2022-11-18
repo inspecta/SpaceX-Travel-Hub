@@ -16,19 +16,12 @@ const Rockets = () => {
     dispatch(bookRockets(id));
   };
 
-  let content;
-  if (status === 'pending') {
-    content = <p className="loading">Loading...</p>;
-  } else if (status === 'rejected') {
-    content = <p>An error occured</p>;
-  } else if (status === 'success') {
-    content = <p />;
-  }
-
   return (
-    <div>
-      {content}
-      <div className="rocketList">
+    <div className="rocketList">
+      {status === 'pending' ? (
+          <p>Loading...</p>
+        ) : (
+      <div>
         {rockets.map((rocket) => (
           <div key={rocket.id} className="rocketCard">
             <img src={rocket.flickr_images[0]} className="rocket-img" alt="rockes" />
@@ -47,6 +40,7 @@ const Rockets = () => {
           </div>
         ))}
       </div>
+        )}
     </div>
   );
 };
